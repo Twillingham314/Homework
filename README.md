@@ -1,6 +1,6 @@
 # TAWANDA
-I am a hairstylist
-Goals list 
+## I am a hairstylist
+### Goals list 
 - establish better computer knowledge and understanding of data analytics
 - Finish the course
   

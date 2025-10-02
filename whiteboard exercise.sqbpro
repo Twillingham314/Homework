@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="whiteboard exercise.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="query structure browser pragmas" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="554"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="Question_4" custom_title="0" dock_id="3" table="4,10:mainQuestion_4"/><dock_state state="000000ff00000000fd00000001000000020000054a00000257fc0100000003fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500320100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f007700730065003301000000000000054a0000011e00ffffff000002690000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Question_1" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="35"/><column index="2" value="55"/><column index="3" value="47"/><column index="4" value="71"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Question_2" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="35"/><column index="2" value="43"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Question_3" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="67"/><column index="2" value="99"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Question_4" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="35"/><column index="2" value="40"/><column index="3" value="76"/><column index="4" value="71"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">CREATE TABLE &quot;Question_1&quot; (
+id INT,
+name VARCHAR,
+salary INT,
+managerId INT
+)
+</sql><sql name="SQL2*">INSERT INTO Question_1
+VALUES
+(1, &quot;Joe&quot;, 70000, 3),
+(2,&quot; Henry&quot;, 80000, 4),
+(3, &quot;Sam&quot;, 60000, NULL),
+(4,&quot; Max&quot;, 90000, NULL)
+</sql><sql name="SQL 3*">SELECT *
+FROM Question_1 as employee
+LEFT JOIN Question_1 as manager
+ON employee.managerId = manager.id
+WHERE employee.salary &gt; manager.salary;</sql><sql name="SQL 2* (1)*">CREATE TABLE &quot;Question_2&quot; ( 
+id INT,
+salary INT
+)</sql><sql name="SQL 2* (1)* (1)*">INSERT INTO Question_2 
+VALUES
+(1, 100),
+(2, 200),
+(3, 300)
+
+
+ 
+</sql><sql name="SQL 2* (2)* (1)* (1)*">SELECT DISTINCT salary
+FROM Question_2
+ORDER BY salary DESC
+LIMIT 1 OFFSET 1;
+
+ 
+</sql><sql name="question 3.1*">CREATE TABLE &quot;Question_3&quot; (
+id INT,
+email VARCHAR
+)
+</sql><sql name="question 3.2* (1)*">INSERT INTO Question_3
+VALUES
+(1, &quot;a@b.com&quot;),
+(2, &quot;c@d.com&quot;),
+(3, &quot;a@b.com&quot;)
+
+</sql><sql name="question 3.3*">
+
+
+</sql><sql name="question 4* (1)*">CREATE TABLE &quot;Question_4&quot; (
+id INT,
+name VARCHAR,
+department VARCHAR,  
+managerId INT
+)
+</sql><sql name="question 4.2*">INSERT INTO Question_4
+VALUES
+(101, &quot;John&quot;, &quot;A&quot;, NULL),
+(102, &quot;Dan&quot;, &quot;A&quot;, 101),
+(103, &quot;James&quot;,&quot;A&quot;, 101),
+(104, &quot;Amy&quot;, &quot;A&quot;, 101),
+(105, &quot;Anne&quot;, &quot;A&quot;, 101),
+(106, &quot;Ron&quot;, &quot;B&quot;, 101)
+
+
+</sql><sql name="question 4.3*">SELECT managerId.name
+FROM Question_4 as employee_id
+LEFT JOIN Question_4 as managerId
+ON employee_id.managerId = managerId.id
+GROUP BY employee_id.managerId
+HAVING COUNT(employee_id.managerId) &gt;= 5
+
+</sql><current_tab id="11"/></tab_sql></sqlb_project>
